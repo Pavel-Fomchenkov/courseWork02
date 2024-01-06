@@ -5,7 +5,11 @@ import org.mockito.Mockito;
 import pro.sky.javacoursepart2.courseWork02.examinerService.domain.Question;
 import pro.sky.javacoursepart2.courseWork02.examinerService.exceptions.WrongAmountException;
 
+import java.util.Collection;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.when;
 
 class ExaminerServiceImplTest {
@@ -31,5 +35,7 @@ class ExaminerServiceImplTest {
         assertThrows(WrongAmountException.class, () -> out.getQuestions(0));
         assertThrows(WrongAmountException.class, () -> out.getQuestions(-1));
         assertEquals(5, out.getQuestions(5).size());
+        assertEquals(5, out.getQuestions(5)
+                        .stream().distinct().count());
     }
 }
