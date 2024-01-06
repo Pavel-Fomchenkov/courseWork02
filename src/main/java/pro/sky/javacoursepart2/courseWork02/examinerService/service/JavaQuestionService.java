@@ -10,7 +10,7 @@ import java.util.*;
 @Service
 @Qualifier("java")
 public class JavaQuestionService implements QuestionService {
-    private QuestionRepository repository;
+    private final QuestionRepository repository;
 
     public JavaQuestionService(@Qualifier("java") QuestionRepository repository) {
         this.repository = repository;

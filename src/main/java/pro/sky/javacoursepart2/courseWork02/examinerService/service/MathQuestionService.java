@@ -3,7 +3,7 @@ package pro.sky.javacoursepart2.courseWork02.examinerService.service;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import pro.sky.javacoursepart2.courseWork02.examinerService.domain.Question;
-import pro.sky.javacoursepart2.courseWork02.examinerService.domain.QuestionRepository;
+import pro.sky.javacoursepart2.courseWork02.examinerService.exceptions.BannedMethodException;
 
 import java.util.Collection;
 import java.util.Random;
@@ -11,30 +11,25 @@ import java.util.Random;
 @Service
 @Qualifier("math")
 public class MathQuestionService implements QuestionService {
-    private QuestionRepository repository;
-
-    public MathQuestionService(@Qualifier("math") QuestionRepository repository) {
-        this.repository = repository;
-    }
 
     @Override
     public Question add(String question, String answer) {
-        return repository.add(question, answer);
+        throw new BannedMethodException("Method \"add\" is banned for math questions");
     }
 
     @Override
     public Question add(Question question) {
-        return repository.add(question);
+        throw new BannedMethodException("Method \"add\" is banned for math questions");
     }
 
     @Override
     public Question remove(String question, String answer) {
-        return repository.remove(question, answer);
+        throw new BannedMethodException("Method \"remove\" is banned for math questions");
     }
 
     @Override
     public Collection<Question> getAll() {
-        return repository.getAll();
+        throw new BannedMethodException("This method is banned for math questions");
     }
 
     @Override

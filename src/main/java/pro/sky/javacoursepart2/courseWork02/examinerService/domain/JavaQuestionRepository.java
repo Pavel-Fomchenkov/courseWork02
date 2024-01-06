@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import pro.sky.javacoursepart2.courseWork02.examinerService.exceptions.AlreadyAddedException;
+import pro.sky.javacoursepart2.courseWork02.examinerService.exceptions.QuestionNotFoundException;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -54,7 +55,7 @@ public class JavaQuestionRepository implements QuestionRepository {
                 .filter(q -> q.equals(qToFind))
                 .findAny()
                 .map(q -> repository.remove(q))
-                .orElseThrow(() -> new RuntimeException("Элемент не найден"));
+                .orElseThrow(() -> new QuestionNotFoundException("Элемент не найден"));
         return qToFind;
     }
 
