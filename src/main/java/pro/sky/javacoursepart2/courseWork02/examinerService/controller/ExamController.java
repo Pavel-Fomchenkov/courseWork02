@@ -25,7 +25,7 @@ public class ExamController {
                 "<br> '/get/количество вопросов' - получить указанное количество случайных вопросов;" +
                 "<br> '/java' - просмотр доступных вопросов по java;" +
                 "<br> '/java/add?question=Текст вопроса&answer=Текст ответа' - добавить свой вопрос по java;" +
-                "<br> '/java/remove?question=Текст вопроса&answer=Текст ответа' - удалить вопрос по java;";
+                "<br> '/java/remove?question=Текст вопроса&answer=Текст ответа' - удалить вопрос по java.";
     }
 
     @GetMapping("/get/{amount}")
