@@ -18,12 +18,14 @@ class ExaminerServiceImplTest {
         int i = 0;
         when(javaQuestionService.getRandomQuestion())
                 .thenReturn(new Question("jq" + ++i, "ja"))
+                .thenReturn(new Question("jq" + i, "ja"))
                 .thenReturn(new Question("jq" + ++i, "ja"))
                 .thenReturn(new Question("jq" + ++i, "ja"))
                 .thenReturn(new Question("jq" + ++i, "ja"))
                 .thenReturn(new Question("jq" + ++i, "ja"));
         when(mathQuestionService.getRandomQuestion())
                 .thenReturn(new Question("mq" + ++i, "ma"))
+                .thenReturn(new Question("jq" + i, "ja"))
                 .thenReturn(new Question("mq" + ++i, "ma"))
                 .thenReturn(new Question("mq" + ++i, "ma"))
                 .thenReturn(new Question("mq" + ++i, "ma"))
