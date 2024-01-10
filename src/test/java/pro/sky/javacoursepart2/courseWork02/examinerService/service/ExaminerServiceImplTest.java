@@ -25,7 +25,7 @@ class ExaminerServiceImplTest {
                 .thenReturn(new Question("jq" + ++i, "ja"));
         when(mathQuestionService.getRandomQuestion())
                 .thenReturn(new Question("mq" + ++i, "ma"))
-                .thenReturn(new Question("jq" + i, "ja"))
+                .thenReturn(new Question("mq" + i, "ma"))
                 .thenReturn(new Question("mq" + ++i, "ma"))
                 .thenReturn(new Question("mq" + ++i, "ma"))
                 .thenReturn(new Question("mq" + ++i, "ma"))
